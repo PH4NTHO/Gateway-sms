@@ -34,8 +34,8 @@ class Handler(BaseHTTPRequestHandler):
             self.wfile.write(b'{"error":"invalid_body"}')
             return
 
-        # Aqui você poderia integrar com um SMS real, por enquanto só responde OK
-        print(f"Enviando SMS para {to}: {text}")
+        # Aqui você poderia integrar com SMS real (modem/chip) mais tarde
+        print(f"Recebido SMS para {to}: {text}")
 
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
